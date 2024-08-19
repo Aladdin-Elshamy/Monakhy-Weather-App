@@ -1,6 +1,6 @@
 # Monakhy Weather App
 
-[screencapture-aladdin-elshamy-github-io-Monakhy-Weather-App-2024-08-19-22_22_28.pdf](https://github.com/user-attachments/files/16664438/screencapture-aladdin-elshamy-github-io-Monakhy-Weather-App-2024-08-19-22_22_28.pdf)
+![screencapture-aladdin-elshamy-github-io-Monakhy-Weather-App-2024-08-19-22_22_28-1](https://github.com/user-attachments/assets/13ee8a49-5b89-43db-a319-3f78bd4fe450)
 
 Welcome to the Monakhy Weather App! This is a web application that provides current weather conditions and forecasts for a given location using the WeatherAPI.
 
@@ -12,7 +12,6 @@ You can view the live application [here](https://aladdin-elshamy.github.io/Monak
 
 - **Current Weather**: Displays the current weather conditions for a specified location.
 - **Weather Forecast**: Provides weather forecasts for the next few days.
-- **Search by Coordinates**: Allows you to search for weather data based on geographical coordinates (latitude and longitude).
 - **Responsive Design**: Works on various screen sizes and devices.
 
 ## Technologies Used
