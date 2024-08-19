@@ -55,7 +55,6 @@ function handleHourClick(elements,currentWeatherState) {
                 element.classList.remove("activeHour")
             })
             element.classList.add("activeHour")
-            console.log(element)
             degreeElement.textContent = document.querySelector(".activeHour span").textContent
             weatherElementTitle.textContent = currentWeatherState
 
