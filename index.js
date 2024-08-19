@@ -159,7 +159,7 @@ function handleDayChange(dayClass){
   
 function success(pos) {
     const crd = pos.coords;
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=eda8d98890214bab926190059241708&q=${crd.latitude},${crd.longitude}&days=3`).then(res => res.json()).then(data => {
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=eda8d98890214bab926190059241708&q=${crd.latitude},${crd.longitude}&days=3`).then(res => res.json()).then(data => {
         workOnData = data
         city = data.location.name
         country = data.location.country
