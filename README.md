@@ -19,7 +19,7 @@ You can view the live application [here](https://aladdin-elshamy.github.io/Monak
 - **HTML**: For structuring the web pages.
 - **CSS**: For styling and layout.
 - **JavaScript**: For interactivity and API integration.
-- **WeatherAPI**: For fetching weather data (https://www.weatherapi.com/).
+- **WeatherAPI**: For fetching weather data ([OpenWeather API](https://openweathermap.org/api)).
 
 ## Installation 📝
 
