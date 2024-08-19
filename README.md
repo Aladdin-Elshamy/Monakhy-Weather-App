@@ -32,11 +32,11 @@ To run this project locally, follow these steps:
 
 2. **Navigate to the Project Directory**
 
-cd Monakhy-Weather-App
+   cd Monakhy-Weather-App
 
 3. **Open the Application**
 
-Open index.html in your preferred web browser. You can use a local server or simply open the file directly.
+   Open index.html in your preferred web browser. You can use a local server or simply open the file directly.
 
 ## Usage
 
