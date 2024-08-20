@@ -19,6 +19,17 @@ body{
     width: 90%;
     margin-inline: auto;
 }
+/* Disable blue highlight on button click */
+button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* You can do the same for links */
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 /* ---------------------------- Date and Location --------------------------- */
 .date-location{
     background-color: #b4d6d7;
@@ -113,34 +124,47 @@ body{
         top:90%
     }
 }
-
 .days{
+    display: flex;
+    justify-content: space-between;
+}
+.days .yesterday span,
+.days .tomorrow span{
     display: none;
 }
-.single-day{
+.days .yesterday,
+.days .tomorrow
+{
+    pointer-events: none;  
+}
+.days .yesterday i,
+.days .tomorrow i
+{
+    pointer-events: all;  
+}
+.days .yesterday i:active,
+.days .tomorrow i:active{
+    transform: scale(1.5);
+}
+
+.today,
+.tomorrow,
+.yesterday{
     font-family:"Josefin Sans", Arial, Helvetica, sans-serif ;
     font-size: 1.3rem;
     background-color: transparent;
     border: none;
+    cursor: pointer;
     transition: all 0.3s ease;
-    text-align: center;
-    font-weight: bold;
+    height: 100px;
 }
-.single-day::after{
-    content: "";
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-radius: 99%;
-    background-color: var(--color);
-    margin-top: 0.5em;
-    margin-inline: auto;
-}
+
 .grid-container{
     display: grid;
     grid-template-columns: 1fr ;
     gap: 1em;
     padding: 1em;
+    margin-bottom: 1em;
     text-align: center;
 }
 .grid-container div{
@@ -164,8 +188,14 @@ i{
     font-size: 1.5rem;
 }
 @media (min-width: 768px) {
-    .single-day{
-        display: none;
+    .days .yesterday,
+    .days .tomorrow
+    {
+      pointer-events: all;  
+    }
+    .days .yesterday span,
+    .days .tomorrow span{
+        display: inline;
     }
     .weather{
         padding:0;
@@ -181,17 +211,7 @@ i{
     .today{
         margin-top: 0.5em;
     }
-    .today,
-    .tomorrow,
-    .yesterday{
-        font-family:"Josefin Sans", Arial, Helvetica, sans-serif ;
-        font-size: 1.3rem;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        height: 100px;
-    }
+
     .today::after{
         content: "";
         display: block;
@@ -256,6 +276,7 @@ i{
     width: 8px;
     height: 8px;
     border-radius: 99%;
+    transform: translateY(0);
     background-color: var(--color);
     margin-top: 0.5em;
     margin-inline: auto;

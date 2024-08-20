@@ -18,7 +18,7 @@ const options = {
     maximumAge: 0,
 };
 let workOnData = ""
-const weekday = ["Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"]
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 const months = [
     "January", "February", "March", "April", "May", "June", 
     "July", "August", "September", "October", "November", "December"
@@ -73,11 +73,11 @@ function handleDayChange(dayClass){
         date = date.split("-")
         year = date[0]
         day = date[2]
-        date = new Date(date[0], date[1], date[2])
+        date = new Date(date[0], date[1] - 1, date[2])
         month = date.getMonth()
-        let textDay = date.getDay()
-        dateElement.textContent = `${months[month - 1]} ${day}, ${year}`
-        dayElement.textContent = weekday[textDay-2]
+        let textDay = weekday[date.getDay()];
+        dateElement.textContent = `${months[month]} ${day}, ${year}`
+        dayElement.textContent = textDay
         degreeElement.textContent = `${workOnData.forecast.forecastday[1].day.avgtemp_c} °C`
         const weatherHourlyData = workOnData.forecast.forecastday[1].hour.slice(0, 10)
         const weatherHourlyDataArr = weatherHourlyData.map(day => {
@@ -101,11 +101,11 @@ function handleDayChange(dayClass){
         date = date.split("-")
         year = date[0]
         day = date[2]
-        date = new Date(date[0], date[1], date[2])
+        date = new Date(date[0], date[1]-1, date[2])
         month = date.getMonth()
-        let textDay = date.getDay()
-        dateElement.textContent = `${months[month - 1]} ${day}, ${year}`
-        dayElement.textContent = weekday[textDay-2]
+        let textDay = weekday[date.getDay()];
+        dateElement.textContent = `${months[month]} ${day}, ${year}`
+        dayElement.textContent = textDay
         degreeElement.textContent = `${workOnData.current.temp_c} °C`
         const weatherHourlyData = workOnData.forecast.forecastday[0].hour.slice(0, 10)
         const weatherHourlyDataArr = weatherHourlyData.map(day => {
@@ -129,11 +129,11 @@ function handleDayChange(dayClass){
         date = date.split("-")
         year = date[0]
         day = date[2]
-        date = new Date(date[0], date[1], date[2])
+        date = new Date(date[0], date[1] - 1, date[2])
         month = date.getMonth()
-        let textDay = date.getDay()
-        dateElement.textContent = `${months[month - 1]} ${day}, ${year}`
-        dayElement.textContent = weekday[textDay-2]
+        let textDay = weekday[date.getDay()];
+        dateElement.textContent = `${months[month]} ${day}, ${year}`
+        dayElement.textContent = textDay
         degreeElement.textContent = `${workOnData.forecast.forecastday[1].day.avgtemp_c} °C`
         const weatherHourlyData = workOnData.forecast.forecastday[2].hour.slice(0, 10)
         const weatherHourlyDataArr = weatherHourlyData.map(day => {
@@ -166,14 +166,14 @@ function success(pos) {
         date = date.split("-")
         year = date[0]
         day = date[2]
-        date = new Date(date[0], date[1], date[2])
+        date = new Date(date[0], date[1] - 1, date[2])
         month = date.getMonth()
-        let textDay = date.getDay()
-        dateElement.textContent = `${months[month - 1]} ${day}, ${year}`
+        let textDay = weekday[date.getDay()]
+        dateElement.textContent = `${months[month]} ${day}, ${year}`
         LocationElement.textContent = `${city}, ${country}`
         degreeElement.textContent = `${data.current.temp_c} °C`
         weatherElementTitle.textContent = `${data.current.condition.text}`
-        dayElement.textContent = weekday[textDay-2]
+        dayElement.textContent = textDay
         const weatherHourlyData = data.forecast.forecastday[0].hour.slice(0, 10)
         const weatherHourlyDataArr = weatherHourlyData.map(day => {
             let hours = day.time.split(" ")[1].split(":")[0];
