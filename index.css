@@ -35,8 +35,13 @@ a {
     background-color: #b4d6d7;
     min-height: 100vh;
     height: auto;
-    padding-top: 3em;
+    padding-top: 2em;
     position: relative;
+}
+@media (min-width: 768px) {
+    .date-location{
+        padding-top: 3em;
+    }
 }
 .date-location .container div{
     display: flex;
@@ -88,7 +93,7 @@ a {
     background-image: url('images/Clouds.png');
     background-size: cover;
     background-position: center;
-    height: calc(100vh - 20em);
+    height: calc(100vh - 19.5em);
 }
 
 
@@ -107,7 +112,7 @@ a {
 
 .weather{
     position: absolute;
-    top: 105%;
+    top: 107%;
     padding-top: 3em;
     z-index: 1;
     border-top-left-radius: 3em;
@@ -121,7 +126,12 @@ a {
         margin-top: -2.5em;
     }
     .weather{
-        top:90%
+        top:95%
+    }
+}
+@media (min-width: 1024px) {
+    .weather{
+        top: 90%;
     }
 }
 .days{
