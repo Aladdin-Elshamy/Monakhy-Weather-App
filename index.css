@@ -138,28 +138,28 @@ a {
     display: flex;
     justify-content: space-between;
 }
-.days .yesterday span,
+.days .after-tomorrow span,
 .days .tomorrow span{
     display: none;
 }
-.days .yesterday,
+.days .after-tomorrow,
 .days .tomorrow
 {
     pointer-events: none;  
 }
-.days .yesterday i,
+.days .after-tomorrow i,
 .days .tomorrow i
 {
     pointer-events: all;  
 }
-.days .yesterday i:active,
+.days .after-tomorrow i:active,
 .days .tomorrow i:active{
     transform: scale(1.5);
 }
 
 .today,
 .tomorrow,
-.yesterday{
+.after-tomorrow{
     font-family:"Josefin Sans", Arial, Helvetica, sans-serif ;
     font-size: 1.3rem;
     background-color: transparent;
@@ -198,12 +198,12 @@ i{
     font-size: 1.5rem;
 }
 @media (min-width: 768px) {
-    .days .yesterday,
+    .days .after-tomorrow,
     .days .tomorrow
     {
       pointer-events: all;  
     }
-    .days .yesterday span,
+    .days .after-tomorrow span,
     .days .tomorrow span{
         display: inline;
     }
@@ -211,7 +211,7 @@ i{
         padding:0;
     }
     .days,
-    .yesterday,
+    .after-tomorrow,
     .tomorrow{
         display: flex;
     }
@@ -241,10 +241,10 @@ i{
         
     .today:hover,
     .tomorrow:hover,
-    .yesterday:hover{
+    .after-tomorrow:hover{
         transform: translateY(-10px);
     }
-    .yesterday, .tomorrow{
+    .after-tomorrow, .tomorrow{
         align-items: center;
         gap: 1em;
     }

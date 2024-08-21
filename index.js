@@ -68,8 +68,8 @@ function handleDayChange(dayClass){
     let month
     let date
 
-    if(dayClass === "yesterday"){
-        date = workOnData.forecast.forecastday[1].date
+    if(dayClass === "after-tomorrow"){
+        date = workOnData.forecast.forecastday[2].date
         date = date.split("-")
         year = date[0]
         day = date[2]
@@ -78,8 +78,8 @@ function handleDayChange(dayClass){
         let textDay = weekday[date.getDay()];
         dateElement.textContent = `${months[month]} ${day}, ${year}`
         dayElement.textContent = textDay
-        degreeElement.textContent = `${workOnData.forecast.forecastday[1].day.avgtemp_c} °C`
-        const weatherHourlyData = workOnData.forecast.forecastday[1].hour.slice(0, 10)
+        degreeElement.textContent = `${workOnData.forecast.forecastday[2].day.avgtemp_c} °C`
+        const weatherHourlyData = workOnData.forecast.forecastday[2].hour.slice(0, 10)
         const weatherHourlyDataArr = weatherHourlyData.map(day => {
             let hours = day.time.split(" ")[1].split(":")[0];
             hours = parseInt(hours)
@@ -92,7 +92,7 @@ function handleDayChange(dayClass){
                     </div>`;
         })
         weatherHourlyElement.innerHTML = weatherHourlyDataArr.join("")
-        let state = workOnData.current.condition.text
+        let state = workOnData.forecast.forecastday[2].day.condition.text
         let hourElements = document.querySelectorAll(".hour")
         handleHourClick(hourElements,state)
     }
@@ -125,17 +125,17 @@ function handleDayChange(dayClass){
         handleHourClick(hourElements,state)
     }
     else if(dayClass === "tomorrow"){
-        date = workOnData.forecast.forecastday[2].date
+        date = workOnData.forecast.forecastday[1].date
         date = date.split("-")
         year = date[0]
         day = date[2]
-        date = new Date(date[0], date[1] - 1, date[2])
+        date = new Date(date[0], date[1] - 1, date[1])
         month = date.getMonth()
         let textDay = weekday[date.getDay()];
         dateElement.textContent = `${months[month]} ${day}, ${year}`
         dayElement.textContent = textDay
         degreeElement.textContent = `${workOnData.forecast.forecastday[1].day.avgtemp_c} °C`
-        const weatherHourlyData = workOnData.forecast.forecastday[2].hour.slice(0, 10)
+        const weatherHourlyData = workOnData.forecast.forecastday[1].hour.slice(0, 10)
         const weatherHourlyDataArr = weatherHourlyData.map(day => {
             let hours = day.time.split(" ")[1].split(":")[0];
             hours = parseInt(hours)
@@ -148,7 +148,7 @@ function handleDayChange(dayClass){
                     </div>`;
         })
         weatherHourlyElement.innerHTML = weatherHourlyDataArr.join("")
-        let state = workOnData.current.condition.text
+        let state = workOnData.forecast.forecastday[1].day.condition.text
         let hourElements = document.querySelectorAll(".hour")
         handleHourClick(hourElements,state)
     }
