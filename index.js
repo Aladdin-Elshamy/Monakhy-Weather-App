@@ -207,5 +207,9 @@ function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
 }
   
-navigator.geolocation.getCurrentPosition(success, error, options);
-  
+if("geolocation" in navigator){
+    navigator.geolocation.getCurrentPosition(success, error, options);
+}
+else {
+    document.querySelector(".grid-container").innerHTML = "<p class='error-msg'>Geolocation is not supported by your browser.</p>"
+}
