@@ -129,7 +129,7 @@ function handleDayChange(dayClass){
         date = date.split("-")
         year = date[0]
         day = date[2]
-        date = new Date(date[0], date[1] - 1, date[1])
+        date = new Date(date[0], date[1] - 1, date[2])
         month = date.getMonth()
         let textDay = weekday[date.getDay()];
         dateElement.textContent = `${months[month]} ${day}, ${year}`
